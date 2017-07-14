@@ -1,9 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.codedead.deadline.advancedpassgen.MainActivity">
+    tools:context="com.codedead.deadline.advancedpassgen.gui.MainActivity"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp">
+
+        <TableRow
+            android:weightSum="2">
+            <TextView
+                android:text="Length:"
+                android:layout_weight="1">
+            </TextView>
+
+            <EditText
+                android:id="@+id/EdtLength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number|numberSigned|numberDecimal" />
+        </TableRow>
+
+        <TableRow
+            android:weightSum="2">
+            <TextView
+                android:text="Amount:"
+                android:layout_weight="1">
+            </TextView>
+
+            <EditText
+                android:id="@+id/EdtAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number|numberSigned|numberDecimal" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/ChbCustom"
+                android:text="Custom character set:" />
+
+            <EditText
+                android:id="@+id/EdtCustomSet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/ChbSmall"
+                android:text="Small letters" />
+
+            <CheckBox
+                android:id="@+id/ChbCapital"
+                android:text="Capital letters" />
+        </TableRow>
+
+        <TableRow
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/ChbSpecial"
+                android:text="Special characters" />
+
+            <CheckBox
+                android:id="@+id/ChbNumbers"
+                android:text="Numbers" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_gravity="right">
+
+        <Button
+            android:id="@+id/BtnGenerate"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generate" />
+
+    </LinearLayout>
+
+</LinearLayout>
